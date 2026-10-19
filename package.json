@@ -1,0 +1,44 @@
+{
+  "name": "dsh-usage",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Read-only local recorded model usage in native DSH Settings",
+  "main": "src/host.mjs",
+  "exports": {
+    ".": "./src/host.mjs",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-settings-general"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "test": "node --test test/aggregate.test.mjs test/collect.test.mjs test/client.test.mjs test/release.test.mjs",
+    "test:installed": "./scripts/installed.sh"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "license": "MIT",
+  "files": [
+    "client.js",
+    "src/",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "examples/"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "synthetic": true,
+  "description": "Invented documentation data; never collected from a user",
+  "events": [
+    {"type":"request/header","data":{"header":{"config":{"provider":"example-provider","model":"example-model"}}}},
+    {"type":"assistant/message","time":1792368000000,"data":{"usage":{"inputTokens":800,"outputTokens":200,"totalTokens":1000}}}
+  ]
+}
